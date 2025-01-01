@@ -36,13 +36,13 @@ input {
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	font-size: 1rem;
 	color: #ffffff;
-	padding: 6px 8px;
+	padding-inline: 0.75rem;
 }
 
 label {
 	position: absolute;
 	top: 50%;
-	left: 8px;
+	inset-inline-start: 0.75rem;
 	transform: translateY(-50%);
 	pointer-events: none;
 	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -59,10 +59,15 @@ label {
 button {
 	color: #ffffff;
 	background-color: #0048f1;
-	block-size: 2rem;
 	font-size: 1rem;
 	border: none;
 	font-weight: 500;
 	cursor: pointer;
 	letter-spacing: 1px;
+}
+
+input,
+button {
+	block-size: 2.75rem;
+	border-radius: 4px;
 }
