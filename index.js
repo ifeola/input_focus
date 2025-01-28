@@ -1,34 +1,33 @@
+"use strict";
+
 // Binary search algorithm for numbers
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-let start = new Date();
-console.log(start.getTime());
+// function getNumber(array, target) {
+// 	let low = 0; // Gets the index of the first number
+// 	let high = array.length - 1; // Gets the index of the last number
 
-function getNumber(array, target) {
-	let low = 0; // Gets the index of the first number
-	let high = array.length - 1; // Gets the index of the last number
+// 	while (low <= high) {
+// 		//Loops through the array until the condition is no longer satisfied
+// 		let mid = Math.floor((high + low) / 2); // Gets the middle index of the array
 
-	while (low <= high) {
-		//Loops through the array until the condition is no longer satisfied
-		let mid = Math.floor((high + low) / 2); // Gets the middle index of the array
+// 		if (array[mid] === target) {
+// 			// if the value of the middle index is same as the target, return the mid index
+// 			return mid;
+// 		} else if (array[mid] < target) {
+// 			// else if the value of the middle index is less than the target, start to check from the middle + 1
+// 			low = mid + 1;
+// 		} else {
+// 			// else if the value of the middle index is greater than the target, the check ends at middle - 1
+// 			high = mid - 1;
+// 		}
+// 	}
 
-		if (array[mid] === target) {
-			// if the value of the middle index is same as the target, return the mid index
-			return mid;
-		} else if (array[mid] < target) {
-			// else if the value of the middle index is less than the target, start to check from the middle + 1
-			low = mid + 1;
-		} else {
-			// else if the value of the middle index is greater than the target, the check ends at middle - 1
-			high = mid - 1;
-		}
-	}
+// 	// If nothing is found, return -1
+// 	return -1;
+// }
 
-	// If nothing is found, return -1
-	return -1;
-}
-
-let result = getNumber(numbers, 15);
+// let result = getNumber(numbers, 15);
 
 // if (result !== -1) {
 // 	console.log(`Target found at index ${result}`);
@@ -38,7 +37,7 @@ let result = getNumber(numbers, 15);
 
 // Binary search algorithm for names
 
-const names = [
+/* const names = [
 	"Aiden",
 	"Alexander",
 	"Alice",
@@ -124,9 +123,9 @@ const names = [
 	"Zane",
 	"Zara",
 	"Zoe",
-];
+]; */
 
-function searchName(array, target) {
+/* function searchName(array, target) {
 	let low = 0;
 	let high = array.length - 1;
 
@@ -143,14 +142,14 @@ function searchName(array, target) {
 	}
 
 	return `Target not found.`;
-}
+} */
 
 // console.log(searchName(names, "Aiden"));
 
 // Sorting Algorithms
 // 1. Selection sort
 
-const contacts = [
+/* const contacts = [
 	{
 		name: "Sophia Turner",
 		phone: "555-1234",
@@ -226,68 +225,101 @@ const contacts = [
 		phone: "555-2020",
 		email: "amelia.thompson@example.com",
 	},
-];
+]; */
 
-// const newArray = [];
-// function selectionSortAlgorithm(array) {
-// 	for (let index = 0; index < array.length; index++) {
-// 		let previousContact = array[index];
-// 		for (let contact = 0; contact < array.length; contact++) {
-// 			if (
-// 				previousContact.name.toLowerCase() > array[contact].name.toLowerCase()
-// 			) {
-// 				previousContact = array[contact];
-// 			} else {
-// 				continue;
-// 			}
-// 		}
-// 		let contactElemenr = array.splice(index, 1);
-// 		console.log(contactElemenr);
-// 	}
-
-// 	console.log(newArray);
-// }
-
-// selectionSortAlgorithm(contacts);
-
-// function getFirstContact(array) {
-// 	for (let index = 0; index < array.length; index++) {
-// 		let firstContact = array[index];
-
-// 		for (let contact = 0; contact < array.length; contact++) {
-// 			if (firstContact.name.toLowerCase() < array[contact].name.toLowerCase()) {
-// 				continue;
-// 			} else {
-// 				firstContact = array[contact];
-// 			}
-// 		}
-// 	}
-// }
-
-function getFirstContact(array) {
+/* function getFirstContact(array) {
 	let smallest = array[0];
 	let smallestIndex = 0;
-
 	for (let index = 1; index < array.length; index++) {
-		if (array[index].name.toLowerCase() < smallest.name.toLowerCase()) {
-			smallest = array[index];
+		const contact = array[index];
+		if (contact.name.toLowerCase() < smallest.name.toLowerCase()) {
+			smallest = contact;
 			smallestIndex = index;
 		}
 	}
-
 	return smallestIndex;
-}
+} */
 
-function selectionSortAlgorithm(array) {
+/* function selectionSortAlgorithm(array) {
 	let newArray = [];
-
-	for (let index = 0; index < array.length; array++) {
+	let size = array.length;
+	console.log("size:", size);
+	for (let index = 0; index < size; index++) {
+		console.log(array.length);
 		let smallest = getFirstContact(array);
-		let contact = array.splice(smallest, 1);
+		let [contact] = array.splice(smallest, 1);
 		newArray = [...newArray, contact];
 	}
+	console.log("size:", size);
 
 	return newArray;
+} */
+
+// console.log(selectionSortAlgorithm(contacts));
+
+/* function factorial(number) {
+	let least = 0;
+	let numbers = [];
+
+	while (least < number) {
+		least = least + 1;
+		numbers.push(least);
+	}
+
+	let total = numbers.reduce((previousValue, currentValue) => {
+		return previousValue * currentValue;
+	}, 1);
+
+	return total;
+} */
+
+/* function factorial(n) {
+	if (n <= 1) return 1;
+	else {
+		return n * factorial(n - 1);
+	}
+} */
+
+// console.log(factorial(8));
+
+// The explanation for the code above
+// The code above runs as follow in the call stack
+// LIFO - Last In First Out approach
+/* 
+	(n(1))
+	function returns 1 when n <= 1
+	(n(2)) * factorial(n(2) - 1) -> function call returns 2 * 1
+	(n(3)) * factorial(n(3) - 1) -> function call returns 3 * 2
+	(n(4)) * factorial(n(4) - 1) -> function call returns 4 * 6
+	(n(5)) * factorial(n(5) - 1) -> function call returns 5 * 24
+	(n(6)) * factorial(n(6) - 1) -> function call returns 6 * 120
+	(n(7)) * factorial(n(7) - 1) -> function call returns 7 * 720
+	(n(8)) * factorial(n(8) - 1) -> function call returns 8 * 5040 = 40,320
+*/
+
+// Recursive Function
+function fibonnaci(n) {
+	if (n == 0) return 0;
+	else if (n == 1) return 1;
+	else {
+		return fibonnaci(n - 1) + fibonnaci(n - 2);
+	}
 }
 
-console.log(selectionSortAlgorithm(contacts));
+console.log(fibonnaci(2));
+
+// The explanation for the code above
+// The code above runs as follow in the call stack
+// LIFO - Last In First Out approach
+/* 
+	base call at index(0) -> if n == 0 return 0
+	base call at index(1) -> else if n == 1 return 1
+	recursive call of fibonacci(n at index(2)) -> (fibonacci((n - 1)) == index(1) 0 + fibonacci((n - 2) == index(0) 1 -> function call returns index(1) + index(0) == 0 + 1 = 1
+	recursive call of fibonacci(n at index(3)) -> (fibonacci((n - 1)) == index(2) 1 + fibonacci((n - 2) == index(1) 1 -> function call returns index(2) + index(1) == 1 + 1 = 2
+	recursive call of fibonacci(n at index(4)) -> (fibonacci((n - 1)) == index(3) 2 + fibonacci((n - 2) == index(2) 1 -> function call returns index(3) + index(2) == 1 + 2 = 3
+	recursive call of fibonacci(n at index(5)) -> (fibonacci((n - 1)) == index(4) 3 + fibonacci((n - 2) == index(3) 2 -> function call returns index(4) + index(3) == 3 + 2 = 5
+	recursive call of fibonacci(n at index(6)) -> (fibonacci((n - 1)) == index(5) 5 + fibonacci((n - 2) == index(4) 3 -> function call returns index(5) + index(4) == 5 + 3 = 8
+	recursive call of fibonacci(n at index(7)) -> (fibonacci((n - 1)) == index(6) 5 + fibonacci((n - 2) == index(5) 3 -> function call returns index(6) + index(5) == 8 + 5 = 13
+	recursive call of fibonacci(n at index(8)) -> (fibonacci((n - 1)) == index(7) 13 + fibonacci((n - 2) == index(6) 8 -> function call returns index(7) + index(6) == 12 + 8 = 21
+	
+*/
