@@ -298,15 +298,15 @@
 */
 
 // Recursive Function
-function fibonnaci(n) {
+/* function fibonnaci(n) {
 	if (n == 0) return 0;
 	else if (n == 1) return 1;
 	else {
 		return fibonnaci(n - 1) + fibonnaci(n - 2);
 	}
-}
+} */
 
-console.log(fibonnaci(2));
+// console.log(fibonnaci(2));
 
 // The explanation for the code above
 // The code above runs as follow in the call stack
@@ -323,3 +323,62 @@ console.log(fibonnaci(2));
 	recursive call of fibonacci(n at index(8)) -> (fibonacci((n - 1)) == index(7) 13 + fibonacci((n - 2) == index(6) 8 -> function call returns index(7) + index(6) == 12 + 8 = 21
 	
 */
+
+/* function sum(n) {
+	if (n == 0) return 0;
+	else if (n == 1) return 1;
+	return;
+}
+
+let num = 1234;
+num = num.toString()
+console.log(num.length); */
+
+function getBinary(input, result) {
+	if (input == 0) return result;
+
+	result = (input % 2) + result;
+	return getBinary(Math.floor(input / 2), result);
+}
+
+// let result = getBinary(16, "");
+// console.log(result);
+
+function sumOfNatural(n) {
+	if (n <= 1) return 1;
+	return n + sumOfNatural(n - 1);
+}
+
+// let result = sumOfNatural(10);
+// console.log(result);
+
+/* function factorial(n) {
+	if (n <= 1) return 1;
+	return n * factorial(n - 1);
+} */
+
+/* function fibonacci(n) {
+	if (n <= 2) return 1;
+
+	return fibonacci(n - 1) + fibonacci(n - 2);
+} */
+
+/* function sumOfDigits(n) {
+	if (n < 10) return n;
+
+	return (n % 10) + sumOfDigits(Math.floor(n / 10));
+} */
+
+function countVowels(str) {
+	if (str == "") return 0;
+
+	let vowels = ["a", "e", "i", "o", "u"];
+	let firstLetter = str[0].toLowerCase();
+	let count = 0;
+	if (vowels.includes(firstLetter)) {
+		count = 1;
+	}
+	return count + countVowels(str.slice(1));
+}
+let result = countVowels("hello world");
+console.log(result);
